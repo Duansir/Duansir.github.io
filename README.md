@@ -1,4 +1,4 @@
-# 码志
+# 踏雪
 
 我的个人博客：<https://duansir.github.io/>，欢迎 Star 和 Fork。
 
@@ -8,6 +8,7 @@
 
 * [效果预览](#效果预览)
 * [Fork 指南](#fork-指南)
+* [Git 指南](#Git-指南)
 * [贴心提示](#贴心提示)
 * [经验与思考](#经验与思考)
 * [致谢](#致谢)
@@ -31,8 +32,6 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
    **评论模块：** 目前支持 disqus、gitment 和 gitalk，选用其中一种就可以了，推荐使用 gitalk。它们各自的配置指南链接在 \_config.yml 文件的 Comments 一节里都贴出来了。
 
-   **注意：** 如果使用 disqus，因为 disqus 处理用户名与域名白名单的策略存在缺陷，请一定将 disqus.username 修改成你自己的，否则请将该字段留空。我对该缺陷的记录见 [Issues#2][3]。
-
 4. 删除我的文章与图片。
 
    如下文件夹中除了 template.md 文件外，都可以全部删除，然后添加你自己的内容。
@@ -45,6 +44,24 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 5. 修改「关于」页面。
 
    pages/about.md 文件内容对应网站的「关于」页面，里面的内容多为个人相关，将它们替换成你自己的信息，包括 \_data 目录下的 skills.yml 和 social.yml 文件里的数据。
+
+
+## Git 指南
+
+1.输入“git init”     初始化版本库
+
+2.输入“git add .”     添加文件到版本库（只是添加到缓存区）， .代表添加文件夹下所有文件 。
+3.输入“git commit -m "first commit"         把添加的文件提交到版本库，并填写提交备注。
+
+4.输入“git status” 查看commit状态。
+
+4.输入“git remote add origin https://github.com/Duansir/Duansir.github.io.git”（git remote add origin 你自己的https地址），把本地库与远程库关联。
+
+5.输入“git push -u origin master”，上传项目到Github。第一次推送。
+
+6.输入“git push origin master”   第一次推送后，直接使用该命令即可推送修改
+
+
 
 ## 贴心提示
 
@@ -69,7 +86,3 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 ## 致谢
 
 本博客外观基于 [DONGChuan](https://dongchuan.github.io) 修改，感谢！
-
-[1]: https://github.com/mzlogin/chinese-copywriting-guidelines
-[2]: https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/
-[3]: https://github.com/mzlogin/mzlogin.github.io/issues/2

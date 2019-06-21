@@ -1,4 +1,12 @@
-#  姿态更新
+---
+layout: post
+title: 姿态更新
+categories: 姿态解算
+description: 学习飞控算法的第一篇笔记。
+keywords: 姿态
+---
+
+
 
 ## ●欧拉角法
 
@@ -16,12 +24,15 @@ $$
     0 & cos\phi & cos\theta{sin\phi}\\ 
     0 & -sin\phi & cos\theta{cos\phi} \\
   \end{bmatrix}
+  
   \begin{bmatrix} 
    \dot{\phi} \\
    \dot{\theta} \\
-   \dot{\psi} \\ 
+   \dot{\psi}  
   \end{bmatrix}
 $$
+
+
 矩阵求逆，得欧拉角微分方程：
 
 ​         
@@ -34,20 +45,35 @@ $$
   \begin{bmatrix} 
     1 & {tan\theta}{sin\phi} & {tan\theta}{cos\phi} \\
     0 & cos\phi & -{sin\phi}\\ 
-    0 & \frac{sin\phi}{cos\theta} & \frac{cos\phi}{cos\theta} \\
-
+    0 & \frac{sin\phi}{cos\theta} & \frac{cos\phi}{cos\theta} 
   \end{bmatrix}
+  
   \begin{bmatrix} 
    {w_x} \\
    {w_y} \\
-   {w_z}  
+   {w_z} \\
   \end{bmatrix}
 $$
+
+
 根据这个方程，只有在三个角度非常小的时候，才有：
+
+
 $$
-\left[\begin{matrix} w_x \\w_y \\w_z \end{matrix}\right]=\left[\begin{matrix} \dot{\phi} \\ \dot{\theta} \\ \dot{\psi} \end{matrix}\right]
+\begin{bmatrix} 
+  w_x \\
+  w_y \\
+  w_z 
+\end{bmatrix}=
+\begin{bmatrix} 
+  \dot{\phi} \\ 
+  \dot{\theta} \\ 
+  \dot{\psi}\\ 
+\end{bmatrix}
 $$
-​         这就是为什么我们建模的时候会强调一句，假设角度非常小。只有在角度非常小的时候，角速度的积分才会等于欧拉角。 
+​         
+
+​        这就是为什么我们建模的时候会强调一句，假设角度非常小。只有在角度非常小的时候，角速度的积分才会等于欧拉角。 
 
 ​        欧拉角方法直观、简便，可直接解算出欧拉角，而且解算过程中没有非正交化误差。然而欧拉角法计算过程中涉及较多三角函数运算，使得计算量比较大，在工程实际中不好实现。而且因微分方程中含有正切函数，在俯仰角为90°时，方程将会出现奇点。<u>所以这种方法只适用于水平姿态变化不大的情况，而不适用于全姿态运载体的姿态确定</u>。
 
@@ -91,7 +117,7 @@ $$
 
 ​       
 $$
-\dot{\Phi}= w + \frac{1}{2}{\Phi} \times{w} + \frac{1}{{\Phi}^2}(1-{\Phi}\frac{sin\Phi}{2(1-cos\Phi)})\Phi \times(\Phi\times w)
+\dot{\Phi}= w + \frac{1}{2}{\Phi} \times{w} + \frac{1}{\Phi^2}(1-{\Phi}\frac{sin\Phi}{2(1-cos\Phi)})\Phi \times(\Phi\times w)
 $$
 ​          将上式第三项系数按泰勒级数展开后，略去高次项，可得工程常用的近似微分方程：
 
