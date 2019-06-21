@@ -176,19 +176,22 @@ Q(t_{k+1})=e^{\frac{1}{2}\int_{t_k}^{t_{k+1}} [w]dt}Q(t_k)
 $$
 
 $$
-令[\Delta\theta]=\int_{t_k}^{t_{k+1}} [w]dt =   
+\begin{align}
+令[\Delta\theta]=\int_{t_k}^{t_{k+1}} [w]dt 
+& = 
  \begin{bmatrix} 
     0 & -w_x & -w_y & -w_z\\
     w_x & 0 & w_z & -w_y\\
     w_y & -w_z & 0 & w_x \\
     w_z & w_y & -w_x & 0 
-  \end{bmatrix} dt =
+  \end{bmatrix} dt \\&=
   \begin{bmatrix} 
     0 & -\Delta\theta_x & -\Delta\theta_y & -\Delta\theta_z\\
     \Delta\theta_x & 0 & \Delta\theta_z & -\Delta\theta_y\\
     \Delta\theta_y & -\Delta\theta_z & 0 & \Delta\theta_x \\
     \Delta\theta_z & \Delta\theta_y & -\Delta\theta_x & 0 
   \end{bmatrix}
+  \end{align}
 $$
 
 $$
@@ -200,15 +203,17 @@ $$
 $$
 
 $$
-e^{\frac{1}{2}[\Delta\theta]}=I 
+\begin{align}
+e^{\frac{1}{2}[\Delta\theta]} &=I 
 + \frac{1}{1!}({\frac{[\Delta\theta]}{2}})^1 
 + \frac{1}{2!}({\frac{[\Delta\theta]}{2}})^2
 + \frac{1}{3!}({\frac{[\Delta\theta]}{2}})^3
 + \cdots
 + \frac{1}{n!}({\frac{[\Delta\theta]}{2}})^n
-+ \cdots
-= Icos\frac{\Delta\theta}{2}
++ \cdots \\
+&= Icos\frac{\Delta\theta}{2}
 + \frac{[\Delta\theta]}{\Delta\theta}sin\frac{\Delta\theta}{2}
+\end{align}
 $$
 
 #####  一阶近似
