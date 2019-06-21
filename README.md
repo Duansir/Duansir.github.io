@@ -12,13 +12,6 @@
 * [经验与思考](#经验与思考)
 * [致谢](#致谢)
 
-<!-- vim-markdown-toc -->
-
-## 效果预览
-
-**[在线预览 &rarr;](https://mazhuang.org)**
-
-![screenshot home](https://mazhuang.org/assets/images/screenshots/home.png)
 
 ## Fork 指南
 
