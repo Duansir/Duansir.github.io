@@ -1,51 +1,51 @@
-- name: 码志
-  url: http://mazhuang.org
-  src: life
-
-- name: Connie 酱
-  url: https://connie99.github.io
-  src: life
-
-- name: 只宁静不致远
-  url: http://zxning.github.io
-  src: life
-
-- name: Blog Something
-  url: http://chenxiaoyoyo.github.io
-  src: life
-
-- name: 日新亭
-  url: http://www.fengerzh.com/
-  src: life
-
-- name: 叮咚购
-  url: http://www.ringwang.com/
-  src: life
-
-- name: wanandroid
-  url: http://www.wanandroid.com/
-  src: life
-
-- name: ZZY补完计划
-  url: https://zzycreate.github.io/
-  src: life
-
-- name: 村农
-  url: http://www.why-dong.com/
-  src: life
-
-- name: 求生之路
-  url: http://blog.xiaolaoni.xin/
-  src: life
-
-- name: 水寒的博客
-  url: https://dp2px.com
+- name: 阮一峰的网络日志
+  url: http://www.ruanyifeng.com/blog/
   src: www
 
-- name: 孙不服的博客
-  url: https://www.sunbufu.club/
+- name: HelloGitHub 月刊
+  url: https://hellogithub.com/
   src: www
 
-- name: 聆听风声
-  url: http://www.codeinfo.top
+- name: Summer
+  url: https://blog.csdn.net/qq_21842557/article/category/6111635
+  src: life
+
+- name: FantasyJXF
+  url: https://blog.csdn.net/oqqenvy12/article/category/6449496
+  src: life
+
+- name: 努力的zing
+  url: https://zinghd.gitee.io/
+  src: life
+
+- name: luoshi006
+  url: https://blog.csdn.net/luoshi006
+  src: life
+
+- name: Breeze系列四轴飞行器项目
+  url: https://microdynamics.github.io/
+  src: life
+
+- name: stackoverflow
+  url: https://stackoverflow.com/
+  src: www
+
+- name: 虾米一代
+  url: https://blog.csdn.net/czyv587/article/category/6180559
+  src: life
+
+- name: 飞行评测
+  url: http://flyeval.com/paper/
+  src: www
+
+- name: 正点原子
+  url: http://openedv.com/thread-13912-1-1.html
+  src: www
+
+- name: 多旋翼飞行器设计与控制
+  url: https://www.icourse163.org/course/BUAA-1205700805
+  src: www
+
+- name: 多旋翼飞行器理论与实践系列实验
+  url: http://www.shenlanxueyuan.com/course/155
   src: www
