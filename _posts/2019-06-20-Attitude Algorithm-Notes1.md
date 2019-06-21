@@ -43,9 +43,9 @@ $$
    \dot{\psi} 
   \end{bmatrix} = 
   \begin{bmatrix} 
-    1 & {tan\theta}{sin\phi} & {tan\theta}{cos\phi} \\
-    0 & cos\phi & -{sin\phi}\\ 
-    0 & \frac{sin\phi}{cos\theta} & \frac{cos\phi}{cos\theta} 
+    1 & {\tan\theta}{\sin\phi} & {\tan\theta}{\cos\phi} \\
+    0 & \cos\phi & -{\sin\phi}\\ 
+    0 & \frac{\sin\phi}{\cos\theta} & \frac{\cos\phi}{\cos\theta} 
   \end{bmatrix}
   
   \begin{bmatrix} 
