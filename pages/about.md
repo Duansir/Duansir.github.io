@@ -1,18 +1,16 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 做一个快乐的嵌入式码农
+keywords: Duansir, duansir
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+我是段先生，一个不断追求理想的嵌入式码农。
 
-仰慕「优雅编码的艺术」。
-
-坚信熟能生巧，努力改变人生。
+坚信开源改变世界，努力改变人生。
 
 ## 联系
 
