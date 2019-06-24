@@ -22,9 +22,11 @@
   url: https://blog.csdn.net/luoshi006
   src: life
 
-- name: Breeze系列四轴飞行器项目
+- name:  Breeze系列四轴飞行器项目
   url: https://microdynamics.github.io/
   src: life
+  
+
 
 - name: stackoverflow
   url: https://stackoverflow.com/
@@ -49,3 +51,8 @@
 - name: 多旋翼飞行器理论与实践系列实验
   url: http://www.shenlanxueyuan.com/course/155
   src: www
+  
+- name: Crazepony开源四轴飞行器项目
+  url: http://www.crazepony.com/book/index.html
+  src: life  
+ 
