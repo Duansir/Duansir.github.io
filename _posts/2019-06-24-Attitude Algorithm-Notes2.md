@@ -1,7 +1,6 @@
 ---
-
 layout: post
-title: 姿态
+title: 姿态解算
 categories: 姿态解算
 description: 学习飞控算法的第二篇笔记。
 keywords: 姿态 解算
