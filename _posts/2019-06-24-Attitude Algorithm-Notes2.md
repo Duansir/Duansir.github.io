@@ -287,7 +287,7 @@ $$
 在这个XOY平面上（e系），的投影为(b.x)2,的投影为(h.x)2+(h.y)2。显然，地磁计在XOY平面上（e系）的向量的大小必定相同，所以有b.x2= h.x2+h.y2。
 ```
 
-![](F:\Duansir.github.io\images\posts\yaw误差.png)
+![yaw误差.png](https://i.loli.net/2019/08/08/ux1oMcm9b4TXiPn.png)
 
 <br/>再经过R旋转回转到b系中，得到估计方向<br/>
 $$
@@ -329,13 +329,9 @@ $$
 
 <br/>4、对误差进行积分比例运算，更新陀螺仪角速度值，同理IMU。
 
-![](F:\Duansir.github.io\images\posts\原理.png)
+![原理.png](https://i.loli.net/2019/08/08/FYJRykgBeUSqf19.png)
 
-
-
-
-
-![](F:\Duansir.github.io\images\posts\Mahony的互补滤波.png)
+![Mahony的互补滤波.png](https://i.loli.net/2019/08/08/JI1Qocv53nkO6LM.png)
 
 
 
