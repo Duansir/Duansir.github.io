@@ -3,7 +3,7 @@ layout: post
 title: 姿态更新
 categories: 姿态解算
 description: 学习飞控算法的第一篇笔记。
-keywords: 姿态
+keywords: 姿态 
 ---
 
 ## ●欧拉角法
