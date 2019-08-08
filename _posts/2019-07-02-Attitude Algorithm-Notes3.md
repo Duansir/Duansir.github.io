@@ -4,7 +4,6 @@ title: 数据融合
 categories: 姿态解算
 description: 学习飞控算法的第三篇笔记。
 keywords: 姿态 融合 滤波 卡尔曼 
-
 ---
 
 # ●互补滤波
@@ -24,13 +23,12 @@ keywords: 姿态 融合 滤波 卡尔曼
 
 
 $$
-低通滤波器：F_{lp}(s) = \cfrac{C(s)}{C(s)+s}
-$$
-<br/>
-$$
+低通滤波器：F_{lp}(s) = \cfrac{C(s)}{C(s)+s}\\
 高通滤波器：F_{hp}(s) = 1 -F_{lp}(s)= \cfrac{s}{C(s)+s}
 $$
-<br/>从频域角度看，我们完全可以把测得的加速度 ![[公式]](https://www.zhihu.com/equation?tex=y_a)认为是测得姿态，因为中间只是经过代数运算而没有积分或微分（意思是通过代数运算获得的姿态实际上频率特性和 ![[公式]](https://www.zhihu.com/equation?tex=y_a) 是一致的）。而陀螺测得的角速度则需要积分才能得到姿态，因此我们认为 ![[公式]](https://www.zhihu.com/equation?tex=y_g%2Fs) 表示测得的姿态（实际上就是角度）。
+<br/>
+
+从频域角度看，我们完全可以把测得的加速度 ![[公式]](https://www.zhihu.com/equation?tex=y_a)认为是测得姿态，因为中间只是经过代数运算而没有积分或微分（意思是通过代数运算获得的姿态实际上频率特性和 ![[公式]](https://www.zhihu.com/equation?tex=y_a) 是一致的）。而陀螺测得的角速度则需要积分才能得到姿态，因此我们认为 ![[公式]](https://www.zhihu.com/equation?tex=y_g%2Fs) 表示测得的姿态（实际上就是角度）。
 
 下面把 ![[公式]](https://www.zhihu.com/equation?tex=F_%7Blp%7D%28s%29) 施加给 ![[公式]](https://www.zhihu.com/equation?tex=y_a) ，把 ![[公式]](https://www.zhihu.com/equation?tex=F_%7Bhp%7D%28s%29) 施加给 ![[公式]](https://www.zhihu.com/equation?tex=y_g%2Fs) ，得到：
 $$
@@ -172,7 +170,7 @@ P_k&=(I-KH)P_\bar k  \tag{5}  &&更新误差协方差\\
 \end{align}
 $$
 
-
+### 原理实现
 
 &emsp;下面用通俗的说法说明一阶卡尔曼公式。
 
