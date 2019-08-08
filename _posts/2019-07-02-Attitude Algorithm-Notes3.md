@@ -10,10 +10,8 @@ keywords: 姿态 融合 滤波 卡尔曼
 
 互补滤波器，也是带通滤波器的变种。
 
-```
 低通滤波器（英语：Low-pass filter）容许低频信号通过，但减弱（或减少）频率高于截止频率的信号的通过。'低'和'高'频率的含义，是相对于滤波器设计者所选择的截止频率而言的。
 高通滤波器则相反，而带通滤波器则是高通滤波器和低通滤波器的组合。
-```
 
 ### 互补滤波原理
 
@@ -23,17 +21,25 @@ keywords: 姿态 融合 滤波 卡尔曼
 
 
 $$
-低通滤波器：F_{lp}(s) = \cfrac{C(s)}{C(s)+s}\\
-高通滤波器：F_{hp}(s) = 1 -F_{lp}(s)= \cfrac{s}{C(s)+s}
+\begin{align}
+低通滤波器：F_{lp}(s) &= \cfrac{C(s)}{C(s)+s}\\
+高通滤波器：F_{hp}(s) &= 1 -F_{lp}(s)
+                    = \cfrac{s}{C(s)+s}
+\end{align}
 $$
 <br/>
 
-从频域角度看，我们完全可以把测得的加速度 ![[公式]](https://www.zhihu.com/equation?tex=y_a)认为是测得姿态，因为中间只是经过代数运算而没有积分或微分（意思是通过代数运算获得的姿态实际上频率特性和 ![[公式]](https://www.zhihu.com/equation?tex=y_a) 是一致的）。而陀螺测得的角速度则需要积分才能得到姿态，因此我们认为 ![[公式]](https://www.zhihu.com/equation?tex=y_g%2Fs) 表示测得的姿态（实际上就是角度）。
+从频域角度看，我们完全可以把测得的加速度**Ya(s)**认为是测得姿态，因为中间只是经过代数运算而没有积分或微分（意思是通过代数运算获得的姿态实际上频率特性和**Ya(s)** 是一致的)。而陀螺测得的角速度则需要积分才能得到姿态，因此我们认为 **Yg(s)/s** 表示测得的姿态（实际上就是角度）。
 
-下面把 ![[公式]](https://www.zhihu.com/equation?tex=F_%7Blp%7D%28s%29) 施加给 ![[公式]](https://www.zhihu.com/equation?tex=y_a) ，把 ![[公式]](https://www.zhihu.com/equation?tex=F_%7Bhp%7D%28s%29) 施加给 ![[公式]](https://www.zhihu.com/equation?tex=y_g%2Fs) ，得到：
 $$
-\hat X(s) = \cfrac{C(s)}{C(s)+s}Y_a(s) + \cfrac{s}{C(s)+s}\cfrac{Y_g(s)}{s}\\
-          = \cfrac{C(s)Y_a(s)+Y_g(s)}{C(s)+s}
+下面把F_{lp}(s)施加给y_a，把F_{hp}(s)施加给y_g/s，得到
+$$
+
+$$
+\begin{align}
+\hat X(s) &= \cfrac{C(s)}{C(s)+s}Y_a(s) + \cfrac{s}{C(s)+s}\cfrac{Y_g(s)}{s}\\
+          &= \cfrac{C(s)Y_a(s)+Y_g(s)}{C(s)+s}
+\end{align}
 $$
 ​	实际上可以表示为下面控制框图
 
