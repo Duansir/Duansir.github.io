@@ -10,7 +10,9 @@ keywords: Github
 
 因为大家都知道的原因，在国内从github上面下载代码的速度峰值通常都是20kB/s。这种速度对于那些小项目还好，而对于大一些的并且带有很多子模块的项目来讲就跟耽误时间。而常见的的方法无非就是修改HOST或者挂VPN，实际用起来并不稳定。
 
-### 修改HOST文件
+## 修改HOST文件
+
+### ~Windows
 
 #### 第一步，打开本机上的Hosts文件 
 
@@ -20,7 +22,7 @@ keywords: Github
 >
 > 在这种情况下，host表示一个网络节点。host是根据TCP/IP for Windows 的标准来工作的，它的作用是包含IP地址和Host name(主机名)的映射关系，是一个映射IP地址和Host name(主机名)的规定，规定要求每段只能包括一个映射关系，IP地址要放在每段的最前面，空格后再写上映射的Host name主机名　。对于这段的映射说明用“#”分割后用文字说明。
 
-##### ~Windows
+##### 
 
 Hosts文件的路径是：
 
@@ -28,19 +30,9 @@ Hosts文件的路径是：
 
 由于文件没有后缀名，可以利用鼠标右键点击，选择用记事本打开，如下图。
 
- 
+ ![hosts.png](https://i.loli.net/2019/08/19/mwoCObugAzd3a92.png)
 
-![img](https://upload-images.jianshu.io/upload_images/10482796-b3d057d8d3b69f5f.png)
 
- 
-
-##### ~Mac 
-
-终端内输入：
-
-**sudo vim /etc/hosts**
-
-打开之后，我们就要向里面追加信息了。
 
 #### 第二步，追加域名的IP地址
 
@@ -51,36 +43,21 @@ Hosts文件的路径是：
 (2) github.global.ssl.fastly.net
 
 打开网页后，利用输入框内分别查询两个域名：
-
- 
-
-![img](https://upload-images.jianshu.io/upload_images/10482796-d4b8d060d057b6f1.png)
-
- 
+![IPaddress.png](https://i.loli.net/2019/08/19/DotanFPWKGv6wN7.png)
 
 先试一下github.com：
 
- 
-
-![img](https://upload-images.jianshu.io/upload_images/10482796-c26549b216011c9a.png)
-
- 
+![github.com.png](https://i.loli.net/2019/08/19/c42XGnlPoAMEkSe.png)
 
 在标注的IP地址中，任选一个记录下来。
 
 再来是github.global.ssl.fastly.net：
 
- 
-
-![img](https://upload-images.jianshu.io/upload_images/10482796-2748b78e2e38b87d.png)
-
- 
+![github.global.ssl.fastly.net.png](https://i.loli.net/2019/08/19/txcHpF9yaRYTZiA.png)
 
 将以上两段IP写入Hosts文件中：
 
- 
-
-![img](https://upload-images.jianshu.io/upload_images/10482796-c789141b563632cf.png)
+ ![hosts文本.png](https://i.loli.net/2019/08/19/QvJxWBqohsEmRNX.png)
 
 保存。
 
@@ -92,11 +69,21 @@ Hosts文件的路径是：
 
 收工。
 
-### VPN翻墙
+### ~Linux 
+
+1、终端内输入：**sudo vim /etc/host**
+
+2、输入**i**进入编辑命令，英文输入法输入**G**，vim编辑器跳到hosts文件的最后一行
+
+3、**esc**退出编辑模式，输入：**wq**，保存hosts文件，修改hosts结束
+
+4、更新DNS缓存，输入**sudo /etc/init.d/networking restart**
+
+## VPN翻墙
 
 [自力更生](https://github.com/bannedbook/fanqiang/wiki)
 
-### 新方法
+## 新方法
 
 这里提供一种新的方法，下载速度可以达到 1~2MB/s
 
