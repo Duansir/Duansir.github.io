@@ -3,10 +3,12 @@ layout: post
 title: 数据融合
 categories: 姿态解算
 description: 学习飞控算法的第三篇笔记。
-keywords: 姿态 融合 滤波 卡尔曼 
+keywords: 融合 卡尔曼 
 ---
 
-# ●互补滤波
+# ●互补滤波 
+
+<br/>
 
 互补滤波器，也是带通滤波器的变种。
 
