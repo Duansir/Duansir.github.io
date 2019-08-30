@@ -128,7 +128,7 @@ keywords: Ubuntu
 
 **9.安装完成后需要重新启动**（重启之后会发现，没有Ubuntu的选择项，依旧直接进入Windows，别急，往下看） 
 
-### 四. 用EasyBCD 创建启动系统。
+### 四、用EasyBCD 创建启动系统。
 
 1.下载EasyBCD，此软件用于在启动电脑的时候选择要进入的系统（自行百度搜索安装）
 
@@ -137,7 +137,7 @@ keywords: Ubuntu
 ![easybcd1.png](https://i.loli.net/2019/08/19/n3agP5hz49LTyMf.png)
 ![easybcd2.png](https://i.loli.net/2019/08/19/p5mW2VA1UOlqjHJ.png)
 
-### 五. 开启系统 
+### 五、开启系统 
 
 做完这些重启系统后，系统会将win7系统和ubuntu 16.04系统都列出来，你可以选择系统进入了。 
 

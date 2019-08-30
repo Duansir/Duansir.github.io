@@ -38,7 +38,7 @@ pip3 install thefuck --upgrade
 
 [thefuck](https://github.com/nvbn/thefuck)
 
-# **shadowsocks-qt5**     
+# Shadowsocks-qt5 
 
 ```markdown
 # 下载最新的版本是后缀为.AppImage的文件
