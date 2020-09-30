@@ -205,7 +205,66 @@ $$
   P(K|K) = (1 – Kg)·P(K|K-1)     //更新此刻的协方差。相信原来值的1-Kg。
 ```
 
+```c
+/********************************************************************
+* Function Name  : kalmanFilter
+* Description    : 卡尔曼滤波
+* Input          : KFP  input
+* Output         : None
+* Return         : out
+    Q:过程噪声，Q增大，动态响应变快，收敛稳定性变坏，系统噪声
+    R:测量噪声，R增大，动态响应变慢，收敛稳定性变好
+    input:  ADC采集的数据
+ 
+注：1 A=1；   控制量：U(k)=0; 
+   2 个人感觉float足够用了，double太浪费了！
+     如果用户感觉精度不够，可以改为double
+ 
+*******************************************************************************/
+//1. 结构体类型定义
+typedef struct 
+{
+    float LastP;//上次估算协方差 初始化值为0.02
+    float Now_P;//当前估算协方差 初始化值为0
+    float out;//卡尔曼滤波器输出 初始化值为0
+    float Kg;//卡尔曼增益 初始化值为0
+    float Q;//过程噪声协方差 初始化值为0.001
+    float R;//观测噪声协方差 初始化值为0.543
+}KFP；//Kalman Filter parameter
 
+//2. 以高度为例 定义卡尔曼结构体并初始化参数
+KFP KFP_height={0.02,0,0,0,0.001,0.543};
+
+/**
+ *卡尔曼滤波器
+ *@param KFP *kfp 卡尔曼结构体参数
+ *   float input 需要滤波的参数的测量值（即传感器的采集值）
+ *@return 滤波后的参数（最优值）
+ */
+ float kalmanFilter(KFP *kfp,float input)
+ {
+     //预测协方差方程：k时刻系统估算协方差 = k-1时刻的系统协方差 + 过程噪声协方差
+     kfp->Now_P = kfp->LastP + kfp->Q;
+     //卡尔曼增益方程：卡尔曼增益 = k时刻系统估算协方差 / （k时刻系统估算协方差 + 观测噪声协方差）
+     kfp->Kg = kfp->Now_P / (kfp->NOw_P + kfp->R);
+     //更新最优值方程：k时刻状态变量的最优值 = 状态变量的预测值 + 卡尔曼增益 * （测量值 - 状态变量的预测值）
+     kfp->out = kfp->out + kfp->Kg * (input -kfp->out);//因为这一次的预测值就是上一次的输出值
+     //更新协方差方程: 本次的系统协方差付给 kfp->LastP 威下一次运算准备。
+     kfp->LastP = (1-kfp->Kg) * kfp->Now_P;
+     return kfp->out；
+ }
+
+/**
+ *调用卡尔曼滤波器 实践
+ */
+float height,kalman_height;
+
+kalman_height = kalmanFilter(&KFP_height,(float)height);
+```
+
+
+
+参考文献：
 
 [平衡车直立算法：互补平衡滤波]: https://feichashao.com/balance_filter/
 [零基础制作两轮自平衡小车]: https://miaowlabs.com/book/MWbalanced/complementary-filter.html
@@ -213,4 +272,11 @@ $$
 [一阶卡尔曼学习记录]: https://blog.csdn.net/q774318039a/article/details/80037215
 [卡尔曼滤波（Kalman Filter）原理与公式推导]: https://zhuanlan.zhihu.com/p/48876718
 [图说卡尔曼滤波，一份通俗易懂的教程]: https://zhuanlan.zhihu.com/p/39912633
+
+
+
+C语言实现：
+
+[代码实现（一维数据滤波）]: https://blog.csdn.net/CSDN_X_W/article/details/90289021
+[Kalman Filter卡尔曼滤波算法C语言源代码]: http://www.suanfajun.com/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%EF%BC%88kalmanfilter%EF%BC%89%E5%88%86%E6%9E%90%E5%8F%8A%E5%85%B6%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%88c%E8%AF%AD%E8%A8%80matlab%EF%BC%89.html
 
