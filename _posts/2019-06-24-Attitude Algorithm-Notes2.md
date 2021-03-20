@@ -238,6 +238,21 @@ void imuUpdate(Axis3f acc, Axis3f gyro, state_t *state , float dt)	//数据融�
 	state->attitude.roll = atan2f(rMat[2][1], rMat[2][2]) * RAD2DEG;
 	state->attitude.yaw = atan2f(rMat[1][0], rMat[0][0]) * RAD2DEG;
 }
+
+void imuComputeRotationMatrix(void)
+{
+    rMat[0][0] = 1.0f - 2.0f * q2q2 - 2.0f * q3q3;
+    rMat[0][1] = 2.0f * (q1q2 -q0q3);
+    rMat[0][2] = 2.0f * (q1q3 +q0q2);
+ 
+    rMat[1][0] = 2.0f * (q1q2 +q0q3);
+    rMat[1][1] = 1.0f - 2.0f * q1q1 - 2.0f * q3q3;
+    rMat[1][2] = 2.0f * (q2q3 -q0q1);
+ 
+    rMat[2][0] = 2.0f * (q1q3 -q0q2);
+    rMat[2][1] = 2.0f * (q2q3 +q0q1);
+    rMat[2][2] = 1.0f - 2.0f * q1q1 - 2.0f * q2q2;
+}
 ```
 
 #### AHRS融合算法
